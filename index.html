@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVZ Navigation</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo">
+          <svg width="268" height="88" viewBox="0 0 268 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- SVG content here -->
+          </svg>
+        </div>
+        <ul class="nav-items">
+          <li><a href="#fahrplan">Fahrplan</a></li>
+          <li><a href="#tickets">Tickets & Angebote</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#stadtbahn">STADTbahn+</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="menu-overlay">
+      <div class="menu-content">
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu">
+          <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link" data-submenu="fahrplan">
+                Fahrplan
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link" data-submenu="tickets">
+                Tickets & Angebote
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link" data-submenu="service">
+                Service
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              </a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#" class="mobile-menu-link" data-submenu="stadtbahn">
+                STADTbahn+
+                <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              </a>
+            </li>
+          </ul>
+
+          <div class="mobile-bottom-menu">
+            <ul class="mobile-menu-list">
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">
+                  UNTERNEHMEN
+                  <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </a>
+              </li>
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">
+                  KARRIERE
+                  <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </a>
+              </li>
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">
+                  FUHRPARK
+                  <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </a>
+              </li>
+              <li class="mobile-menu-item">
+                <a href="#" class="mobile-menu-link">
+                  KONTAKT
+                  <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Mobile Submenus -->
+        <div class="submenu-mobile" id="fahrplan-submenu">
+          <div class="submenu-header">
+            <a href="#" class="back-button">
+              <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              Fahrplan
+            </a>
+          </div>
+          <ul class="submenu-mobile-list">
+            <li class="submenu-mobile-item">
+              <a href="#" class="submenu-mobile-link">Verbindungsauskunft</a>
+            </li>
+            <li class="submenu-mobile-item">
+              <a href="#" class="submenu-mobile-link">Störungsmeldungen</a>
+            </li>
+            <li class="submenu-mobile-item">
+              <a href="#" class="submenu-mobile-link">Fahrpläne</a>
+            </li>
+            <li class="submenu-mobile-item">
+              <a href="#" class="submenu-mobile-link">Haltestellenpläne</a>
+            </li>
+            <li class="submenu-mobile-item">
+              <a href="#" class="submenu-mobile-link">Liniennetz</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="submenu-grid">
+          <div class="submenu-column">
+            <h3>Fahrplan</h3>
+            <ul>
+              <li><a href="#">Verbindungsauskunft</a></li>
+              <li><a href="#">Störungsmeldungen</a></li>
+              <li><a href="#">Fahrpläne</a></li>
+              <li><a href="#">Haltestellenpläne</a></li>
+              <li><a href="#">Liniennetz</a></li>
+            </ul>
+          </div>
+          <div class="submenu-column">
+            <h3>Tickets & Angebote</h3>
+            <ul>
+              <li><a href="#">Fahrpreise</a></li>
+              <li><a href="#">Deutschlandticket</a></li>
+              <li><a href="#">Junge-Leute-Ticket</a></li>
+              <li><a href="#">Bildungsticket</a></li>
+              <li><a href="#">Seniorenticket</a></li>
+            </ul>
+          </div>
+          <div class="submenu-column">
+            <h3>Service</h3>
+            <ul>
+              <li><a href="#">Servicecenter</a></li>
+              <li><a href="#">Häufige Fragen</a></li>
+              <li><a href="#">Ticketautomaten</a></li>
+              <li><a href="#">Beschwerdemanagement</a></li>
+              <li><a href="#">Beförderungsbedingungen</a></li>
+              <li><a href="#">Hinweis EBE</a></li>
+            </ul>
+          </div>
+          <div class="submenu-column">
+            <h3>STADTbahn+</h3>
+            <ul>
+              <li><a href="#">Über das Projekt</a></li>
+              <li><a href="#">Einzelprojektvorstellung</a></li>
+              <li><a href="#">Nutzen</a></li>
+              <li><a href="#">Finanzierung</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Desktop Bottom Menu -->
+        <div class="bottom-menu">
+          <div class="bottom-menu-content">
+            <div class="bottom-menu-column">
+              <h3>UNTERNEHMEN</h3>
+              <ul>
+                <li><a href="#">Zahlen und Fakten</a></li>
+                <li><a href="#">Neuigkeiten</a></li>
+                <li><a href="#">Firmenprofil</a></li>
+                <li><a href="#">Fahrgastbeirat</a></li>
+                <li><a href="#">Historie</a></li>
+                <li><a href="#">Einkaufsbedingungen</a></li>
+              </ul>
+            </div>
+            <div class="bottom-menu-column">
+              <h3>KARRIERE</h3>
+              <ul>
+                <li><a href="#">Stellenangebote</a></li>
+                <li><a href="#">Ausbildungsangebote</a></li>
+                <li><a href="#">Perspektiven und Benefits</a></li>
+                <li><a href="#">Duales SVZ</a></li>
+                <li><a href="#">Ansprechpartner</a></li>
+              </ul>
+            </div>
+            <div class="bottom-menu-column">
+              <h3>FUHRPARK</h3>
+              <ul>
+                <li><a href="#">Busflotte</a></li>
+                <li><a href="#">Stadtbusreisen</a></li>
+                <li><a href="#">Historische Fahrzeuge</a></li>
+                <li><a href="#">Fahrzeugwerbung</a></li>
+              </ul>
+            </div>
+            <div class="bottom-menu-column">
+              <h3>KONTAKT</h3>
+              <ul>
+                <li><a href="#">Ansprechpartner & Kontaktformular</a></li>
+                <li><a href="#">Beschwerde einreichen</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="javascript/script.js"></script>
+</body>
+</html>

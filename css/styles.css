@@ -1,0 +1,354 @@
+:root {
+  --primary-red: #e3000f;
+  --text-color: #333;
+  --border-color: #e5e5e5;
+  --gray-bg: #6F6E6E;
+  --max-width: 1330px;
+  --nav-height: 88px;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* Navigation - Mobile First */
+.main-nav {
+  height: var(--nav-height);
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  height: 100%;
+  width: auto;
+}
+
+/* Hide desktop nav items by default */
+.nav-items {
+  display: none;
+}
+
+/* Hamburger Button */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+  transform-origin: left center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  width: 32px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  width: 32px;
+}
+
+/* Mobile Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  background: white;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease, visibility 0.4s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.menu-overlay.active {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile Main Menu */
+.mobile-menu {
+  padding: 1rem;
+}
+
+.mobile-menu-list {
+  list-style: none;
+}
+
+.mobile-menu-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.mobile-menu-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Mobile Bottom Menu */
+.mobile-bottom-menu {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+/* Mobile Submenu */
+.submenu-mobile {
+  position: fixed;
+  top: var(--nav-height);
+  right: -100%;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  background: white;
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.submenu-mobile.active {
+  transform: translateX(-100%);
+}
+
+.submenu-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.submenu-mobile-list {
+  list-style: none;
+}
+
+.submenu-mobile-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.submenu-mobile-link {
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Hide desktop components on mobile */
+.submenu-grid,
+.bottom-menu {
+  display: none;
+}
+
+/* Desktop Styles */
+@media (min-width: 885px) {
+  body {
+    padding-top: 0;
+  }
+
+  .main-nav {
+    position: relative;
+  }
+
+  .nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+  }
+
+  /* Show desktop nav items */
+  .nav-items {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-items a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .nav-items a:hover {
+    color: var(--primary-red);
+  }
+
+  /* Hide mobile-specific components */
+  .mobile-menu,
+  .mobile-bottom-menu,
+  .submenu-mobile {
+    display: none;
+  }
+
+  /* Desktop Menu Overlay */
+  .menu-overlay {
+    position: absolute;
+    top: 100%;
+    height: auto;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Desktop Submenu Grid */
+  .submenu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: white;
+  }
+
+  .submenu-column h3 {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .submenu-column ul {
+    list-style: none;
+  }
+
+  .submenu-column li {
+    margin-bottom: 0.5rem;
+  }
+
+  .submenu-column a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.9rem;
+  }
+
+  .submenu-column a:hover {
+    color: var(--primary-red);
+  }
+
+  /* Desktop Bottom Menu */
+  .bottom-menu {
+    display: block;
+    background: var(--gray-bg);
+    padding: 2rem 0;
+  }
+
+  .bottom-menu-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .bottom-menu-column h3 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .bottom-menu-column ul {
+    list-style: none;
+  }
+
+  .bottom-menu-column li {
+    margin-bottom: 0.5rem;
+  }
+
+  .bottom-menu-column a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  .bottom-menu-column a:hover {
+    text-decoration: underline;
+  }
+}
