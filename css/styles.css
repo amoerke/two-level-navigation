@@ -260,7 +260,6 @@ body {
   /* Desktop Menu Overlay */
   .menu-overlay {
     position: absolute;
-    top: 100%;
     height: auto;
     transform: translateY(-20px);
     opacity: 0;
