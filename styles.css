@@ -1,0 +1,134 @@
+:root {
+  --primary-red: #e3000f;
+  --text-color: #333;
+  --border-color: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.main-nav {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo svg {
+  width: 134px;
+  height: 44px;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+  transform-origin: left center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  width: 32px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  width: 32px;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  padding-top: 80px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.menu-overlay.active {
+  transform: translateX(0);
+}
+
+.submenu-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.submenu-column h3 {
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.submenu-column ul {
+  list-style: none;
+}
+
+.submenu-column li {
+  margin-bottom: 0.5rem;
+}
+
+.submenu-column a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.submenu-column a:hover {
+  color: var(--primary-red);
+}

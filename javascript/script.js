@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const menuOverlay = document.querySelector('.menu-overlay');
+  const darkOverlay = document.querySelector('.dark-overlay');
   const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link[data-submenu]');
   const backButtons = document.querySelectorAll('.back-button');
   const isMobile = () => window.innerWidth < 885;
@@ -9,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     menuOverlay.classList.toggle('active');
+    
+    // Toggle dark overlay only in desktop view
+    if (!isMobile()) {
+      darkOverlay.classList.toggle('active');
+    }
     
     // Only prevent scroll on mobile
     if (isMobile()) {
@@ -20,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.submenu-mobile.active').forEach(submenu => {
         submenu.classList.remove('active');
       });
+      menuOverlay.classList.remove('submenu-active');
     }
   });
 
@@ -32,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const submenu = document.getElementById(submenuId);
         if (submenu) {
           submenu.classList.add('active');
+          menuOverlay.classList.add('submenu-active');
         }
       }
     });
@@ -45,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const submenu = button.closest('.submenu-mobile');
         if (submenu) {
           submenu.classList.remove('active');
+          menuOverlay.classList.remove('submenu-active');
         }
       }
     });
@@ -63,7 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!menuOverlay.contains(e.target) && !hamburger.contains(e.target)) {
         menuOverlay.classList.remove('active');
         hamburger.classList.remove('active');
+        darkOverlay.classList.remove('active');
       }
+    }
+  });
+
+  // Close menu when clicking on dark overlay
+  darkOverlay.addEventListener('click', () => {
+    if (!isMobile()) {
+      menuOverlay.classList.remove('active');
+      hamburger.classList.remove('active');
+      darkOverlay.classList.remove('active');
     }
   });
 });
